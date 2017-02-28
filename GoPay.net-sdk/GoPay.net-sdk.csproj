@@ -65,6 +65,8 @@
     <Compile Include="src\Model\Payment\AdditionalParam.cs" />
     <Compile Include="src\Model\Payment\BasePayment.cs" />
     <Compile Include="src\Model\Payment\Callback.cs" />
+    <Compile Include="src\Model\Payment\EET.cs" />
+    <Compile Include="src\Model\Payment\EETPayment.cs" />
     <Compile Include="src\Model\Payment\Lang.cs" />
     <Compile Include="src\Model\Payment\NextPayment.cs" />
     <Compile Include="src\Model\Payment\OrderItem.cs" />

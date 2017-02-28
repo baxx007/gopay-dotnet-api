@@ -14,10 +14,10 @@ namespace GoPay.Model.Payments
         public PaymentInstrument PaymentInstrument { get; set; }
         
         [JsonProperty (PropertyName = "allowed_payment_instruments", ItemConverterType = typeof(StringEnumConverter))]
-        public IList<PaymentInstrument> AllowedPaymentInstruments { get; }
+        public IList<PaymentInstrument> AllowedPaymentInstruments { get; set; }
         
         [JsonProperty("allowed_swifts")]
-        public IList<string> AllowedSwifts { get; }
+        public IList<string> AllowedSwifts { get; set; }
 
         [JsonProperty("default_payment_instrument")]
         [JsonConverter(typeof(StringEnumConverter))]

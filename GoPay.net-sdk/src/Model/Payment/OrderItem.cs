@@ -11,15 +11,15 @@ namespace GoPay.Model.Payments
         [JsonProperty("amount")]
         public long Amount { get; set; }
         
-        [JsonProperty("fee")]
-        public long Fee { get; set; }
+        [JsonProperty("vat_rate")]
+        public long VatRate { get; set; }
         
         [JsonProperty("count")]
         public long Count { get; set; }
         
         public override string ToString()
         {
-            return string.Format("ROrderItem [name=%s, amount=%s, fee=%s, count=%s]", Name, Amount, Fee, Count);
+            return string.Format("ROrderItem [name=%s, amount=%s, vat_rate=%s, count=%s]", Name, Amount, VatRate, Count);
         }
 
     }

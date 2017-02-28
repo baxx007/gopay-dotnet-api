@@ -207,12 +207,19 @@ namespace GoPay
 
         private IRestRequest CreateRestRequest(string url, Parameter parameter, Method method = Method.POST)
         {
-            var restRequest = new RestSharp.Newtonsoft.Json.RestRequest(url, Method.POST);
+            var restRequest = new RestSharp.Newtonsoft.Json.RestRequest(url, method);
             if (parameter != null) { 
                 restRequest.AddParameter(parameter);
             }
             restRequest.AddHeader("Accept", "application/json");
-            restRequest.AddHeader("Content-Type", "application/json");
+            if (method != Method.GET)
+            {
+                restRequest.AddHeader("Content-Type", "application/json");                
+            }
+            else
+            {
+                restRequest.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+            }
             restRequest.AddHeader("Authorization", "Bearer " + AccessToken.Token);
             return restRequest;
         }
